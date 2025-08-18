@@ -13,8 +13,8 @@ export default defineConfig({
   },
 
   themeConfig: {
-    siteTitle: 'Meanings Docs'
-  },
+    siteTitle: 'Meanings Docs',
+
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Introduction', link: '/guide/intro' },
@@ -23,12 +23,12 @@ export default defineConfig({
 
     editLink: {
       pattern: 'https://github.com/Chandramauli-Arm64/meanings-docs/edit/master/:path',
-        text: 'Edit this page on Github'
+      text: 'Edit this page on Github'
     },
 
     lastUpdated: {
       text: 'Updated at',
-      formatoptions: {
+      formatOptions: {
         dateStyle: 'full',
         timeStyle: 'medium'
       }
@@ -46,8 +46,6 @@ export default defineConfig({
           { text: 'FAQ/Troubleshoot', link: '/guide/faq' }
         ]
       },
-
-
       {
         text: 'Contribution',
         collapsed: true,
@@ -55,8 +53,6 @@ export default defineConfig({
           { text: 'Development Docs (For Contributors)', link: '/devDocs/docsdev' }
         ]
       },
-
-
       {
         text: 'Credits',
         collapsed: true,
@@ -81,7 +77,7 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: '© xFanexx 2025'
+      copyright: 'Copyright © xFanexx 2025'
     }
   },
 
@@ -89,8 +85,8 @@ export default defineConfig({
     plugins: [
       Components({
         resolvers: IconsResolver({
-          compiler: 'vue3',  // ensure Vue 3 support
-          prefix: '',        // no prefix for icon components
+          compiler: 'vue3',
+          prefix: '',
         }),
       }),
       Icons({
