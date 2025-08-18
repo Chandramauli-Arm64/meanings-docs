@@ -1,0 +1,42 @@
+{
+  "name": "meanings-docs",
+  "version": "0.1.0",
+  "description": "Documentation for the Meanings Discord bot — a sleek bot to manage and explore slang meanings.",
+  "keywords": [
+    "discord",
+    "bot",
+    "slang",
+    "meanings",
+    "documentation"
+  ],
+  "homepage": "https://github.com/xFanexx/meanings#readme",
+  "bugs": {
+    "url": "https://github.com/xFanexx/meanings/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xFanexx/meanings.git"
+  },
+  "license": "MIT",
+  "author": "xFanexx & Sacul",
+  "contributors": [
+    "Chandramauli-Arm64 (Documentation)"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.18"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.375",
+    "@iconify/vue": "^5.0.0",
+    "@vue/compiler-sfc": "^3.5.18",
+    "unplugin-icons": "^22.2.0",
+    "unplugin-vue-components": "^29.0.0"
+  }
+}
