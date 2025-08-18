@@ -6,17 +6,33 @@ import IconsResolver from 'unplugin-icons/resolver'
 export default defineConfig({
   title: "Meanings",
   description: "An Open-sourced Discord Bot Documentation built with Vitepress",
+  base: "/meanings-docs/",
 
   markdown: {
     vue: true, // Enable vue components inside the markdown files
   },
 
   themeConfig: {
+    siteTitle: 'Meanings Docs'
+  },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Introduction', link: '/guide/intro' },
       { text: 'Our Contributors', link: '/License-Credits/contributor' }
     ],
+
+    editLink: {
+      pattern: 'https://github.com/Chandramauli-Arm64/meanings-docs/edit/master/:path',
+        text: 'Edit this page on Github'
+    },
+
+    lastUpdated: {
+      text: 'Updated at',
+      formatoptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
+    },
 
     sidebar: [
       {
