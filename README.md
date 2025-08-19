@@ -20,6 +20,6 @@ Meanings Docs is the official documentation and knowledge base for the Meanings 
 
 > [!NOTE]
 > We’re actively working to expand and improve the docs.
-> If you spot any mistakes or want to contribute, check out our [GitHub repository](https://github.com/Chandramauli-Arm64/meanings-docs).
+> If you spot any mistakes or want to contribute, check out our [GitHub repository](https://chandramauli-arm64.github.io/meanings-docs/).
 
 ---
