@@ -132,7 +132,7 @@ Check their offical **Documentation** for more information. [Python-Poerty](http
 pip install poetry
 ```
 
-> [!IMPORTANT]  <Icon icon="proicons:comment-exclamation" /> **IMPORTANT**
+> [!IMPORTANT]  <Icon icon="proicons:comment-exclamation" /> IMPORTANT
 > When you are installing **Poetry** via `pip`, always check if **Rust** is installed in your system because one of its dependencies (`maturin`) needs Rust to build and top of that do not forget to update `pip` or its **prebuilt wheels**. So, you don't get any errors.
 
 ## Install dependencies
@@ -241,7 +241,7 @@ source venv/bin/activate
 venv\Scripts\activate.bat
 ```
 
-> [!NOTE] <Icon icon="fluent:note-16-filled" /> **NOTE**
+> [!NOTE] <Icon icon="fluent:note-16-filled" /> NOTE
 > If you encounter a "cannot be loaded because running scripts is disabled" error, you may need to run `Set-ExecutionPolicy RemoteSigned -Scope Process` in your PowerShell window to temporarily allow script execution.
 
 Then regenerate the `.txt`:
