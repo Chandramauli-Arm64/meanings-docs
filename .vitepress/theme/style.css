@@ -137,3 +137,26 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/* Universal icons fix */
+svg.icon,
+svg.iconify {
+  display: inline-block;
+  vertical-align: -0.125em;
+  /* aligns neatly with text baseline */
+  height: 1em;
+  /* inherit current font size */
+  width: 1em;
+  line-height: 1;
+  flex-shrink: 0;
+  /* avoid shrinking in flex layouts */
+}
+
+/* If the icon is the only child inside a container (no text) */
+svg.icon:only-child,
+svg.iconify:only-child {
+  height: 1.25em;
+  /* make standalone icon look like an emoji */
+  width: 1.25em;
+  vertical-align: middle;
+  /* center it better */
+}

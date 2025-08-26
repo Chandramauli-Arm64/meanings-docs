@@ -13,14 +13,14 @@ next:
 This section will guide you through setting up the **Meanings** bot on your own Discord server.
 
 
-## Invite Link
+### Invite Link
 
 To use the bot, you’ll first need to create it on the **Discord Developer Portal** and generate an **invite link**.
 
 
 ## Creating a Bot on Discord Developer Portal
 
-1. Go to the [<Icon icon="mdi:discord" width="20" /> Discord Developer Portal](https://discord.com/developers/applications)
+1. Go to the [<Icon icon="mdi:discord" /> Discord Developer Portal](https://discord.com/developers/applications)
 2. Click on **"New Application"**.
 3. Enter your bot's name (e.g., `Meanings`) and click **Create**.
 4. Navigate to the **Bot** tab and click **"Add Bot"**.
@@ -34,7 +34,7 @@ To use the bot, you’ll first need to create it on the **Discord Developer Port
 1. In the **Bot** tab, click **"Reset Token"** to get your bot’s token.
 2. Copy and save it somewhere safe — **never share this token publicly**.
 
-::: danger Important
+::: danger <Icon icon="typcn:warning-outline" /> WARNING
 If your token is leaked, **reset it immediately** from the Developer Portal.
 :::
 
@@ -70,16 +70,16 @@ You’ll establish the runtime environment, install dependencies, and initialize
 
 ##  What You'll Accomplish
 
-1. <Icon icon="mdi:application" width="20" style="vertical-align: middle; margin-right: 6px;" /> **Environment Setup**
+1. <Icon icon="mdi:application" /> **Environment Setup**
    Install Python 3.12+ and a dependency manager.
 
-2. <Icon icon="mdi:keyboard" width="20" style="vertical-align: middle; margin-right: 6px;" /> **Configuration**
+2. <Icon icon="mdi:keyboard" /> **Configuration**
    Set up environment variables and your Discord bot token.
 
-3. <Icon icon="mdi:package-variant-closed" width="20" style="vertical-align: middle; margin-right: 6px;" /> **Dependency Installation**
+3. <Icon icon="mdi:package-variant-closed" /> **Dependency Installation**
    Install required packages with Poetry (recommended) or pip.
 
-4. <Icon icon="mdi:play-circle" width="20" style="vertical-align: middle; margin-right: 6px;" /> **Bot Initialization**
+4. <Icon icon="mdi:play-circle" /> **Bot Initialization**
    Launch your bot instance.
 
 
@@ -103,31 +103,36 @@ You’ll establish the runtime environment, install dependencies, and initialize
 
 ## 🚀 Getting Started
 1. Clone the repo:
-   ```sh
-   git clone https://github.com/xFanexx/meanings.git
-   ```
+
+```sh
+ git clone https://github.com/xFanexx/meanings.git
+```
+
 ## Install Poetry (if not installed)
 1. From offical site:
   - Linux, macOS, Windows (WSL)
-    ```sh
-    curl -sSL https://install.python-poetry.org | python3 -
-    ```
-  - Windows (Powershell)
-    ```sh
-    (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
-    ```
 
-> [!NOTE]
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+```
+  - Windows (Powershell)
+
+```bash
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+```
+
+> [!NOTE] <Icon icon="fluent:note-16-filled" /> NOTE
 > If you have installed Python through the Microsoft Store, replace `py` with `python` in the command above.
 
-Check their offical **Documentation** for more information. [Python-Poetry](https://python-poetry.org/docs/#installing-with-the-official-installer)
+Check their offical **Documentation** for more information. [Python-Poerty](https://python-poetry.org/docs/#installing-with-the-official-installer)
 
 2. With **PIP**:
+
 ```py
 pip install poetry
 ```
 
-> [!IMPORTANT]
+> [!IMPORTANT]  <Icon icon="proicons:comment-exclamation" /> **IMPORTANT**
 > When you are installing **Poetry** via `pip`, always check if **Rust** is installed in your system because one of its dependencies (`maturin`) needs Rust to build and top of that do not forget to update `pip` or its **prebuilt wheels**. So, you don't get any errors.
 
 ## Install dependencies
@@ -136,8 +141,19 @@ pip install poetry
 poetry install
 ```
 
-> [!NOTE]
+> [!NOTE] <Icon icon="fluent:note-16-filled" /> NOTE
 > This installs all dependencies listed in `pyproject.toml` inside a virtual environment.
+>
+>
+> Since this project is a **Discord bot** (not a distributed Python package), we set:
+>
+> ```toml
+> [tool.poetry]
+> package-mode = false
+> ```
+>
+> This ensures that `poetry install` only installs dependencies and does not fail with a *“No file/folder found for package”* error.
+
 
 # For Non-Poetry Users
 
@@ -146,8 +162,15 @@ If you don’t have **Poetry** installed, you can still run this project using o
 ### Installation
 
 ```py
-pip install -r requirements.txt
+pip install --no-deps -r requirements.txt
 ```
+
+> [!IMPORTANT]  <Icon icon="proicons:comment-exclamation" /> IMPORTANT
+> When using `requirements.txt` exported from Poetry, the `--no-deps` flag is required.
+>
+> This is because the exported file already includes **all direct and transitive dependencies** with exact versions or resolved hashes.
+> Running pip without `--no-deps` may cause it to try **re-resolving dependencies**, which can lead to conflicts or errors—especially for Git-based dependencies.
+
 
 # Environment Variables
 Create a `.env` file in the project root:
@@ -156,57 +179,105 @@ Create a `.env` file in the project root:
 DISCORD_TOKEN=your_discord_token_here
 ```
 
-> [!WARNING]
+> [!WARNING] <Icon icon="typcn:warning-outline" /> WARNING
 > Do not commit `.env` to version control.
 
 After this also copy your **UserID** to past in `bot.py`:
 
-```py bot.py
+```py
 # Whitelisted user IDs who can add meanings
 WHITELISTED_USERS = [ADD_USER_ID_HERE]  # Add more user IDs here
 ```
 
-At linenumber **35**
-
 ## Updating Dependencies (PIP)
 
-1. Upgrade a single dependency:
+1. **Upgrade a single dependency**:
 
 ```py
 pip install --upgrade <package-name>
 ```
+
 **Example**:
 
 ```py
 pip install --upgrade discord.py
 ```
 
-Then regenerate `requirements.txt`:
+**Then regenerate `requirements.txt`**:
+
+- Create a virtual environment:
+
+  - Linux / MacOS
+
+```bash
+python3 -m venv venv
+```
+
+  - Windows (Powershell and CMD)
+
+```bash
+python -m venv venv
+```
+
+This creates a folder called venv in your project.
+
+- Activate the virtual environment:
+
+  - Linux / MacOS
+
+```bash
+source venv/bin/activate
+```
+
+**Replace `venv` with the name of your virtual environment folder**.
+
+  - Windows (Powershell and CMD)
+
+```bash
+# Powershell
+.\venv\Scripts\Activate.ps1
+
+# CMD
+venv\Scripts\activate.bat
+```
+
+> [!NOTE] <Icon icon="fluent:note-16-filled" /> **NOTE**
+> If you encounter a "cannot be loaded because running scripts is disabled" error, you may need to run `Set-ExecutionPolicy RemoteSigned -Scope Process` in your PowerShell window to temporarily allow script execution.
+
+Then regenerate the `.txt`:
 
 ```py
 pip freeze > requirements.txt
 ```
 
-2. Upgrade all dependencies:
+After that deactivate it:
+
+```bash
+# Linux, MacOS and Windows
+deactivate
+```
+
+2. **Upgrade all dependencies**:
 
 ```py
 pip install --upgrade -r requirements.txt
 ```
 
-> [!WARNING]
+> [!WARNING] <Icon icon="typcn:warning-outline" /> WARNING
 > This respects the pinned versions in `requirements.txt`. If you want latest versions, remove version numbers from the file before running.
 
 
 ### Regenerate requirements.txt
 
-After any upgrade:
+After any upgrade activate the virtual environment and update it:
 
 ```py
 pip freeze > requirements.txt
 ```
 
-> [!TIP]
+> [!TIP] <Icon icon="octicon:light-bulb-16" /> TIP
 > Using `pyproject.toml` with **Poetry** is recommended for consistent, reproducible environments — but `requirements.txt` works for quick installs and deployment.
+
 
 # Updating Dependencies
 
