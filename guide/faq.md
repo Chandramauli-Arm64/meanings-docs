@@ -1,5 +1,5 @@
 ---
-title: FAQ & TROUBLESHOOT
+title: FAQ & Troubleshooting
 prev:
   text: "Configuration"
   link: "/guide/configuration.md"
@@ -7,92 +7,93 @@ next:
   text: "Docs for Devs (Contributors)"
   link: "/devDocs/docsdev.md"
 ---
-# FAQ & Troubleshooting
 
-Here you’ll find answers to common issues and questions when working with the bot.
+# Frequently Asked Questions & Troubleshooting
 
+Below are answers to common questions and steps to resolve frequent issues when setting up or running the bot. For complete installation and configuration instructions, refer to the [README](../README.md).
 
-# The bot doesn’t start. What should I do?
+## Bot Fails to Start
 
-1. Check if dependencies are installed:
+::: details **Expand for step-by-step troubleshooting**
+1. **Install Dependencies**
+   Ensure all required Python packages are installed:
+   ```bash
+   # If using Poetry
+   poetry install
 
-```py
-poetry install   # if using Poetry
-```
+   # Or, using pip
+   pip install --no-deps -r requirements.txt
+   ```
 
-```py
-pip install -r requirements.txt  # if using pip
-```
+2. **Configure Environment Variables**
+   Confirm that your `.env` file contains a valid `DISCORD_TOKEN`.
+   See [Configuration Guide](installation.md) for details.
 
-2. Ensure your `.env` file contains the correct `DISCORD_TOKEN`.
+3. **Run the Bot**
+   ```bash
+   # Using Poetry
+   poetry run python bot.py
 
+   # Using Python directly
+   python bot.py
+   ```
+:::
 
-3. Run the bot again:
+---
 
-```py
-poetry run python bot.py
-```
+## “Invalid Token” Error
 
-or
+- Verify your `DISCORD_TOKEN` value in `.env` is correct.
+- Ensure the token is active and has not been regenerated in the [Discord Developer Portal](https://discord.com/developers/applications).
+- If in doubt, generate a new token and update `.env`.
 
-```py
-python bot.py
-```
+---
 
+## Bot Commands Not Responding
 
-# The bot says “Invalid Token”.
+- Check that your command prefix in `bot.py` matches what you are typing.
+- Confirm the bot has permission to **Read Messages** and **Send Messages** in the channel.
+- Inspect bot logs for errors or permission issues.
 
-- Double-check your `DISCORD_TOKEN` in `.env`.
+---
 
-- Ensure the token hasn’t been reset from the [Discord Developer Portal](https://discord.com/developers/applications).
+## Self-Hosting the Bot
 
-- If unsure, generate a new token and update your `.env`.
-
-
-# Commands are not responding.
-
-- Make sure the command prefix in `bot.py` matches what you are typing.
-
-- Verify that the bot has permissions to `read` and `send messages` in the channel.
-
-- Check bot logs.
-
-
-#  How do I self-host the bot?
-
-- Follow the **installation** and **configuration** steps.
-
-Deploy on your preferred environment:
+Refer to the [Installation](installation.md) for installation instructions.
+You can deploy the bot on:
 
 - Local machine
-
 - VPS (e.g., DigitalOcean, Linode)
-
 - Cloud services (e.g., AWS, GCP)
 
-- Use a process manager like PM2 or systemd to keep the bot running.
+To keep the bot running continuously, consider using a process manager such as **systemd** or **PM2**.
 
+---
 
-#  I’m not using Poetry. What should I do?
+## Not Using Poetry?
 
-No worries! You can install dependencies with pip instead:
+You may use `pip` as an alternative:
 
-```py
-pip install -r requirements.txt
-```
-
-and run bot with:
-
-```py
+```bash
+pip install --no-deps -r requirements.txt
 python bot.py
 ```
 
-#  Still stuck?
+---
 
-- Check the logs for errors.
+## Still Need Help?
 
-- Review your configuration in .env and bot.py
+- Review logs for error messages.
+- Double-check your `.env` and `bot.py` configurations.
+- Browse existing [GitHub Issues](https://github.com/Chandramauli-Arm64/meanings-docs/issues), or [open a new issue](https://github.com/Chandramauli-Arm64/meanings-docs/issues/new) with detailed information.
 
-- Visit the GitHub Issues page to see if others faced the same problem.
+> [!NOTE] <Icon icon="fluent:note-16-filled" /> NOTE
+> For full installation, configuration, and usage guidance, see the [README](../README.md).
 
-- Or open a new issue with details about your problem.
+---
+
+## Contributing & Support
+
+If you wish to contribute or need further assistance, refer to [Docs for Devs (Contributors)](/devDocs/bot.md).
+You may also reach out via GitHub Issues or Discussion.
+

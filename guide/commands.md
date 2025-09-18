@@ -4,8 +4,8 @@ prev:
   text: "Installation"
   link: "/guide/installation.md"
 next:
-  text: "Configuration"
-  link: "/guide/configuration.md"
+  text: "FAQ"
+  link: "/guide/faq.md"
 ---
 
 

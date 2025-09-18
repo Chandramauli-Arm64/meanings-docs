@@ -5,7 +5,7 @@ prev:
   link: "/guide/intro.md"
 next:
   text: "Command Reference"
-  link: "/guide/commands-reference.md"
+  link: "/guide/commands.md"
 ---
 
 # Installation & Setup
@@ -109,7 +109,7 @@ You’ll establish the runtime environment, install dependencies, and initialize
 ```
 
 ## Install Poetry (if not installed)
-1. From offical site:
+1. From official site:
   - Linux, macOS, Windows (WSL)
 
 ```bash
@@ -124,7 +124,7 @@ curl -sSL https://install.python-poetry.org | python3 -
 > [!NOTE] <Icon icon="fluent:note-16-filled" /> NOTE
 > If you have installed Python through the Microsoft Store, replace `py` with `python` in the command above.
 
-Check their offical **Documentation** for more information. [Python-Poerty](https://python-poetry.org/docs/#installing-with-the-official-installer)
+Check their official **Documentation** for more information. [Python-Poerty](https://python-poetry.org/docs/#installing-with-the-official-installer)
 
 2. With **PIP**:
 
@@ -321,4 +321,4 @@ python bot.py
 
 This works if you have installed all required dependencies with pip.
 
-**If you are intrested in Contributing to this project, please kindly refer to [Contribution](/devDocs/docsdev.md).**
+**If you are interested in Contributing to this project, please kindly refer to [Contribution](/devDocs/docsdev.md).**
