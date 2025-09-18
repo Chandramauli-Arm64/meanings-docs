@@ -38,7 +38,7 @@ As an open-source project, it encourages community contributions and transparenc
 - Fully open-source and MIT-licensed, allowing anyone to run their own instance of the bot.
 
 **Commands Overview:**
-- Comprehensive list of all commands is available [Commands](commands-reference.md)
+- Comprehensive list of all commands is available [Commands](commands.md)
 
 **Technical Highlights:**
 - Async file handling with `aiofiles` ensures smooth, non-blocking operations.

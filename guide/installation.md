@@ -321,4 +321,4 @@ python bot.py
 
 This works if you have installed all required dependencies with pip.
 
-**If you are interested in Contributing to this project, please kindly refer to [Contribution](/devDocs/docsdev.md).**
+**If you are interested in Contributing to this project, please kindly refer to [Contribution](/devDocs/overview.md).**
