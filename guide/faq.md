@@ -5,7 +5,7 @@ prev:
   link: "/guide/configuration.md"
 next:
   text: "Docs for Devs (Contributors)"
-  link: "/devDocs/docsdev.md"
+  link: "/devDocs/overview.md"
 ---
 
 # Frequently Asked Questions & Troubleshooting
