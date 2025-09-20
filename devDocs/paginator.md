@@ -10,7 +10,7 @@ next:
 
 # paginator.py — The Pagination Engine
 
-Welcome to the detailed documentation for `paginator.py` — the custom pagination system powering the Meanings Discord Bot’s rich, interactive list and results navigation!
+Welcome to this section for `paginator.py` — the custom pagination system powering the Meanings Discord Bot’s rich, interactive list and results navigation!
 This document is designed for contributors and advanced users who want to understand, extend, or debug the bot’s button-based, multi-format pagination.
 
 ---
@@ -216,7 +216,7 @@ def reset_files(self, page_kwargs: dict[str, Any]) -> None:
 
 ---
 
-::: tip Pro Tip
+::: tip <Icon icon="octicon:light-bulb-16" /> Pro Tip
 For best UX, always pass `author_id` to restrict interactions, and set a timeout to avoid orphaned paginators!
 :::
 

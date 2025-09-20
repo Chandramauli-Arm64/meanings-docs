@@ -82,7 +82,8 @@ class MeaningsBot(commands.Bot):
 - **Uptime Tracking:** Used for bot statistics.
 - **Environment Loading:** Uses `.env` for Discord token and configuration.
 
-> **TIP:** This structure allows for easy future extension (e.g., adding more startup hooks).
+> [!TIP] <Icon icon="fluent:note-16-filled" /> NOTE
+> This structure allows for easy future extension (e.g., adding more startup hooks).
 
 #### Whitelisting (Access Control)
 

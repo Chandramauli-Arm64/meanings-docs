@@ -15,11 +15,8 @@ Meanings Docs is the official documentation and knowledge base for the Meanings 
 ## 🚧 Documentation Status
 
 > [!WARNING]
-> This documentation is **still in development**.
-> While the site is already live on [GitHub Pages](https://chandramauli-arm64.github.io/meanings-docs/), some sections are **drafts** and may change frequently.
+> The main project is archived. So, I am stopping the development of this documentation.
+> [Meanings](https://github.com/xFanexx/meanings)
 
-> [!NOTE]
-> We’re actively working to expand and improve the docs.
-> If you spot any mistakes or want to contribute, check out our [GitHub repository](https://github.com/xFanexx/meanings.git).
 
 ---
